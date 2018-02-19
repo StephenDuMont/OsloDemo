@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Oslo Demo</title>
+    <meta charset="utf-8" />
+</head>
+<body style="font-family:'Segoe UI'">
+    <h1>Home chatbot</h1>
+    <p>The home emulator bot.  Make up the rooms if you want and toggle the lights on and off.</p>
+    <p>Visit <a href="https://www.botframework.com/">Bot Framework</a> for the bot framework emulator.</p>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.chat({
+                userId: 1,
+                roomId: 1,
+                typingText: ' is typing...',
+                emptyRoomText: "There's no one around here.",
+                chatJsContentPath: '/api/messages',
+                adapter: new DemoAdapter()
+            });
+        });
+    </script>
+</body>
+</html>
